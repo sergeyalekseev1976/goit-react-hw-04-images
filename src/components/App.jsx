@@ -37,7 +37,7 @@ export const App = () => {
       }
     };
     searchImages();
-  }, [page, query]);
+  }, [page, query, items]);
 
   const handleSearch = searchQuery => {
     if (searchQuery !== query) {
