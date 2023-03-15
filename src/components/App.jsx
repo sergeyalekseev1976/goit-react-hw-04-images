@@ -27,7 +27,7 @@ export const App = () => {
           setIsLoading(false);
           return toast.error('Enter correct query');
         }
-        setItems(prevState => [...items, ...images.hits]);
+        setItems(prevState => [...prevState, ...images.hits]);
         setIsLoading(false);
         setImagesFound(images.hits.length);
       } catch (error) {
@@ -37,7 +37,7 @@ export const App = () => {
       }
     };
     searchImages();
-  }, [page, query, items]);
+  }, [page, query]);
 
   const handleSearch = searchQuery => {
     if (searchQuery !== query) {
